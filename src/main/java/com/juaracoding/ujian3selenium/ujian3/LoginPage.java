@@ -19,8 +19,9 @@ public class LoginPage {
         System.out.printf("Open Browser");
         driver.get("https://www.saucedemo.com/");
 
+
         Utils.delay(2);
-        loginInvalidUser(driver, "Invalid","Invalid");
+        loginInvalidUser(driver, "standard_user","secret_saucee");
         Utils.delay(2);
 
 
@@ -46,7 +47,7 @@ public class LoginPage {
 
     public static void loginInvalidUser(WebDriver driver, String username, String password) {
 
-        // --------------------  invalid login 1
+        // --------------------  invalid login 1 hanya memasukan username
         driver.findElement(By.id("user-name")).sendKeys(username);
         Utils.delay(1);
         driver.findElement(By.id("login-button")).click();
@@ -56,7 +57,7 @@ public class LoginPage {
         driver.findElement(By.id("user-name")).sendKeys(Keys.DELETE);
         Utils.delay(1);
 
-        // --------------------  invalid login 2
+        // --------------------  invalid login 2 hanya memasukan password
         driver.findElement(By.id("password")).sendKeys("password");
         Utils.delay(1);
         driver.findElement(By.id("login-button")).click();
@@ -66,7 +67,7 @@ public class LoginPage {
         driver.findElement(By.id("password")).sendKeys(Keys.DELETE);
         Utils.delay(1);
 
-        // --------------------  invalid login 3
+        // --------------------  invalid login 3 username benar dan password salah
         driver.findElement(By.id("user-name")).sendKeys(username);
         Utils.delay(1);
         driver.findElement(By.id("password")).sendKeys(password);
